@@ -1,0 +1,36 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ReferenceGroup xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema" ID="8e5dda36-51dc-4eae-936a-fa558537efc5" xmlns="urn:schemas-microsoft-com:xml-wcfservicemap">
+  <ClientOptions>
+    <GenerateAsynchronousMethods>false</GenerateAsynchronousMethods>
+    <EnableDataBinding>true</EnableDataBinding>
+    <ExcludedTypes />
+    <ImportXmlTypes>false</ImportXmlTypes>
+    <GenerateInternalTypes>false</GenerateInternalTypes>
+    <GenerateMessageContracts>false</GenerateMessageContracts>
+    <NamespaceMappings />
+    <CollectionMappings />
+    <GenerateSerializableTypes>true</GenerateSerializableTypes>
+    <Serializer>Auto</Serializer>
+    <UseSerializerForFaults>true</UseSerializerForFaults>
+    <ReferenceAllAssemblies>true</ReferenceAllAssemblies>
+    <ReferencedAssemblies />
+    <ReferencedDataContractTypes />
+    <ServiceContractMappings />
+  </ClientOptions>
+  <MetadataSources>
+    <MetadataSource Address="http://localhost:23020/" Protocol="http" SourceId="1" />
+  </MetadataSources>
+  <Metadata>
+    <MetadataFile FileName="item1.disco" MetadataType="Disco" ID="4fdef69e-b9d8-404e-b427-99e90e39e978" SourceId="1" SourceUrl="http://localhost:23020/?disco" />
+    <MetadataFile FileName="item5.xsd" MetadataType="Schema" ID="a9e7e0a7-6df2-4ef5-805b-12f61f721156" SourceId="1" SourceUrl="http://localhost:23020/?xsd=xsd1" />
+    <MetadataFile FileName="item51.xsd" MetadataType="Schema" ID="9245ae53-c399-441d-9ffa-ae8cb2aa8b62" SourceId="1" SourceUrl="http://localhost:23020/?xsd=xsd4" />
+    <MetadataFile FileName="item52.xsd" MetadataType="Schema" ID="7ad34dd1-de00-4e34-99c8-bc1cb68846c0" SourceId="1" SourceUrl="http://localhost:23020/?xsd=xsd3" />
+    <MetadataFile FileName="item53.xsd" MetadataType="Schema" ID="e07bf338-ec91-4cd4-93a3-5373ce35d800" SourceId="1" SourceUrl="http://localhost:23020/?xsd=xsd0" />
+    <MetadataFile FileName="item54.xsd" MetadataType="Schema" ID="2444b71d-a1c6-4304-8d72-5734012c76fc" SourceId="1" SourceUrl="http://localhost:23020/?xsd=xsd2" />
+    <MetadataFile FileName="ReverseIndexServiceContract1.wsdl" MetadataType="Wsdl" ID="48f60adc-7aad-4ae8-9ab2-55228bcaac30" SourceId="1" SourceUrl="http://localhost:23020/?wsdl" />
+  </Metadata>
+  <Extensions>
+    <ExtensionFile FileName="configuration91.svcinfo" Name="configuration91.svcinfo" />
+    <ExtensionFile FileName="configuration.svcinfo" Name="configuration.svcinfo" />
+  </Extensions>
+</ReferenceGroup>

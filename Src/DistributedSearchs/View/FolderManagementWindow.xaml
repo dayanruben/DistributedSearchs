@@ -1,0 +1,29 @@
+<Window xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml" xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" mc:Ignorable="d"
+        x:Class="DistributedSearchs.FolderManagementWindow" x:Name="Window" Title="Folder Management" Width="577"
+        Height="418.5" ResizeMode="NoResize" WindowStyle="ThreeDBorderWindow" ShowInTaskbar="False">
+
+  <Grid x:Name="LayoutRoot">
+    <Rectangle Fill="#FFF4F4F5" HorizontalAlignment="Left" Margin="7,8,0,0" Stroke="Black" Width="225" Height="374.5"
+               VerticalAlignment="Top" />
+    <TextBlock HorizontalAlignment="Left" Margin="62.5,189.5,0,0" TextWrapping="Wrap" Width="124.5" Height="32.5"
+               VerticalAlignment="Top">
+      <Run Language="es-es" Text="Current Directory" />
+    </TextBlock>
+    <TextBlock Height="39.5" Margin="248,8,8,0" TextWrapping="Wrap" VerticalAlignment="Top"
+               Text="For each and every one of the folders you may opt for the program to search or not inside of them." />
+    <GroupBox Header="For the actual folder" Margin="248,51.5,17,0" VerticalAlignment="Top">
+      <StackPanel Orientation="Vertical" d:LayoutOverrides="Width, Height" Margin="0,0,8,8">
+        <RadioButton Content="Search once" d:LayoutOverrides="Width" />
+        <RadioButton Content="Remove from directory" d:LayoutOverrides="Width" />
+        <RadioButton Content="Scan always" d:LayoutOverrides="Width" />
+        <Separator Margin="2,10,2,0" />
+        <CheckBox Content="Search inside documents" HorizontalAlignment="Left" Margin="0,10,0,0" />
+      </StackPanel>
+    </GroupBox>
+    <TextBlock Margin="248,189.5,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Text="Selected folders"
+               HorizontalAlignment="Left" />
+    <ListBox Height="170.5" Margin="248,0,17,8" VerticalAlignment="Bottom" />
+  </Grid>
+</Window>

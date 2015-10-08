@@ -1,0 +1,29 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project xmlns="http://schemas.microsoft.com/developer/msbuild/2003"
+         ToolsVersion="4.0"
+         DefaultTargets="Compile">
+
+  <UsingTask AssemblyFile="..\3rd party\Tools\MSBuildAsyncExecTask\AsyncExec.dll" TaskName="AsyncExec.AsyncExec"/>
+  
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+  </PropertyGroup>
+  
+  <ItemGroup>
+    <BuildArtifacts Include="..\buildArtifacts\"/>
+    <SolutionFile Include="..\DistributedSearchs.sln"/>
+  </ItemGroup>
+  
+  <Target Name="Clean">
+    <RemoveDir Directories="@(BuildArtifacts)"/>
+  </Target>
+  
+  <Target Name="Init" DependsOnTargets="Clean">
+    <MakeDir Directories="@(BuildArtifacts)"/>
+  </Target>
+  
+  <Target Name="Compile" DependsOnTargets="Init">
+    <MSBuild Projects="@(SolutionFile)" Targets="Rebuild" Properties="OutDir=%(BuildArtifacts.FullPath)"/>
+  </Target>
+</Project>
+

@@ -1,0 +1,90 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+
+<xs:schema xmlns:tns="DHT" elementFormDefault="qualified" targetNamespace="DHT"
+           xmlns:xs="http://www.w3.org/2001/XMLSchema">
+  <xs:import schemaLocation="http://localhost:23020/?xsd=xsd2" namespace="http://schemas.datacontract.org/2004/07/DHT" />
+  <xs:import schemaLocation="http://localhost:23020/?xsd=xsd3"
+             namespace="http://schemas.datacontract.org/2004/07/DHT.MainModule" />
+  <xs:element name="Ping">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q1="http://schemas.datacontract.org/2004/07/DHT" minOccurs="0" name="callerIdentifier"
+                    nillable="true" type="q1:NodeIdentifierstring" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="PingResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q2="http://schemas.datacontract.org/2004/07/DHT" minOccurs="0" name="PingResult"
+                    nillable="true" type="q2:HeartBeatOfstring" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="Store">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="key" nillable="true" type="xs:string" />
+        <xs:element xmlns:q3="http://schemas.datacontract.org/2004/07/DHT.MainModule" minOccurs="0" name="value"
+                    nillable="true" type="q3:ArrayOfFileId" />
+        <xs:element xmlns:q4="http://schemas.datacontract.org/2004/07/DHT" minOccurs="0" name="callerIdentifier"
+                    nillable="true" type="q4:NodeIdentifierstring" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="StoreResponse">
+    <xs:complexType>
+      <xs:sequence />
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="FindNode">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="key" nillable="true" type="xs:string" />
+        <xs:element xmlns:q5="http://schemas.datacontract.org/2004/07/DHT" minOccurs="0" name="callerIdentifier"
+                    nillable="true" type="q5:NodeIdentifierstring" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="FindNodeResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q6="http://schemas.datacontract.org/2004/07/DHT" minOccurs="0" name="FindNodeResult"
+                    nillable="true" type="q6:FindNodeResultstring" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="FindValue">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="key" nillable="true" type="xs:string" />
+        <xs:element xmlns:q7="http://schemas.datacontract.org/2004/07/DHT" minOccurs="0" name="callerIdentifier"
+                    nillable="true" type="q7:NodeIdentifierstring" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="FindValueResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q8="http://schemas.datacontract.org/2004/07/DHT" minOccurs="0" name="FindValueResult"
+                    nillable="true" type="q8:FindValueResultOfstringArrayOfFileIdPf8begk3" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="Remove">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="key" nillable="true" type="xs:string" />
+        <xs:element xmlns:q9="http://schemas.datacontract.org/2004/07/DHT" minOccurs="0" name="callerIdentifier"
+                    nillable="true" type="q9:NodeIdentifierstring" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="RemoveResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="RemoveResult" type="xs:boolean" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+</xs:schema>

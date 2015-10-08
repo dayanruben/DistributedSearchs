@@ -1,0 +1,84 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="4.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProductVersion>8.0.30703</ProductVersion>
+    <SchemaVersion>2.0</SchemaVersion>
+    <ProjectGuid>{0BAB4147-A47E-42C0-8C99-3092016AA60A}</ProjectGuid>
+    <OutputType>Library</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>DHT.Test</RootNamespace>
+    <AssemblyName>DHT.Test</AssemblyName>
+    <TargetFrameworkVersion>v4.0</TargetFrameworkVersion>
+    <FileAlignment>512</FileAlignment>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="nunit.framework, Version=2.5.10.11092, Culture=neutral, PublicKeyToken=96d09a1eb7f44a77, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\..\3rd party\Tools\NUnit\framework\nunit.framework.dll</HintPath>
+    </Reference>
+    <Reference Include="ReactiveUI, Version=2.3.0.0, Culture=neutral, processorArchitecture=MSIL" />
+    <Reference Include="System" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Reactive, Version=1.0.10425.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL" />
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="Microsoft.CSharp" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Xml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="KadNode_Tests\IntKadNetwork.cs" />
+    <Compile Include="KadNode_Tests\IntKadNode.cs" />
+    <Compile Include="KadNode_Tests\GenericKadNode_Tests.cs" />
+    <Compile Include="KadNode_Tests\IntKadNode_generic_tests.cs" />
+    <Compile Include="KadNode_Tests\KadNetwork.cs" />
+    <Compile Include="KadNode_Tests\MockKadCore.cs" />
+    <Compile Include="KadNode_Tests\nodeLookUp_returns_what_what_should_be.cs" />
+    <Compile Include="KadNode_Tests\sad_path\IntKadNode_generic_tests.cs" />
+    <Compile Include="Mother.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Common\LamdaComparer.cs" />
+    <Compile Include="RoutingTable_Tests\nearTo_returns_the_nearest_elements.cs" />
+    <Compile Include="Metric_Tests\GenericMetricEuclideanTest.cs" />
+    <Compile Include="Metric_Tests\is_euclidean_test.cs" />
+    <Compile Include="SetKadNode_Tests\GenericSetKadNode_Tests.cs" />
+    <Compile Include="SetKadNode_Tests\IntSetKadNetwork.cs" />
+    <Compile Include="SetKadNode_Tests\IntSetKadNode.cs" />
+    <Compile Include="SetKadNode_Tests\IntSetKadNode_generic_tests.cs" />
+    <Compile Include="SetKadNode_Tests\MockSetKadCore.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\..\Src\DHT\DHT.csproj">
+      <Project>{C6F16B42-0099-4D2C-AF04-96351A63F166}</Project>
+      <Name>DHT</Name>
+    </ProjectReference>
+  </ItemGroup>
+  <ItemGroup />
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target>
+  -->
+</Project>

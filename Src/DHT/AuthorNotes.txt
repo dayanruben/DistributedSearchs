@@ -1,0 +1,9 @@
+﻿
+This assembly should contain the DHT implementation. There is a paper on the web with 13 pages
+with documentation about how Kademelia DHT should be implemented. This should be the implementation
+that we'll use here.
+
+														
+
+Glossary
+DHT - Distributed Hash Table

@@ -1,0 +1,78 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+
+<xs:schema xmlns:tns="http://schemas.datacontract.org/2004/07/DHT" elementFormDefault="qualified"
+           targetNamespace="http://schemas.datacontract.org/2004/07/DHT" xmlns:xs="http://www.w3.org/2001/XMLSchema">
+  <xs:import schemaLocation="http://localhost:23020/?xsd=xsd3"
+             namespace="http://schemas.datacontract.org/2004/07/DHT.MainModule" />
+  <xs:complexType name="NodeIdentifierstring">
+    <xs:annotation>
+      <xs:appinfo>
+        <GenericType Name="NodeIdentifier{0}" Namespace="http://schemas.datacontract.org/2004/07/DHT"
+                     xmlns="http://schemas.microsoft.com/2003/10/Serialization/">
+          <GenericParameter Name="string" Namespace="http://www.w3.org/2001/XMLSchema" />
+        </GenericType>
+      </xs:appinfo>
+    </xs:annotation>
+    <xs:sequence>
+      <xs:element minOccurs="0" name="NodeId" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="ServiceUrl" nillable="true" type="xs:string" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="NodeIdentifierstring" nillable="true" type="tns:NodeIdentifierstring" />
+  <xs:complexType name="HeartBeatOfstring">
+    <xs:annotation>
+      <xs:appinfo>
+        <GenericType Name="HeartBeatOf{0}{#}" Namespace="http://schemas.datacontract.org/2004/07/DHT"
+                     xmlns="http://schemas.microsoft.com/2003/10/Serialization/">
+          <GenericParameter Name="string" Namespace="http://www.w3.org/2001/XMLSchema" />
+        </GenericType>
+      </xs:appinfo>
+    </xs:annotation>
+    <xs:sequence>
+      <xs:element minOccurs="0" name="NodeIdentifier" nillable="true" type="tns:NodeIdentifierstring" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="HeartBeatOfstring" nillable="true" type="tns:HeartBeatOfstring" />
+  <xs:complexType name="FindNodeResultstring">
+    <xs:annotation>
+      <xs:appinfo>
+        <GenericType Name="FindNodeResult{0}" Namespace="http://schemas.datacontract.org/2004/07/DHT"
+                     xmlns="http://schemas.microsoft.com/2003/10/Serialization/">
+          <GenericParameter Name="string" Namespace="http://www.w3.org/2001/XMLSchema" />
+        </GenericType>
+      </xs:appinfo>
+    </xs:annotation>
+    <xs:sequence>
+      <xs:element minOccurs="0" name="Nodes" nillable="true" type="tns:ArrayOfNodeIdentifierstring" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="FindNodeResultstring" nillable="true" type="tns:FindNodeResultstring" />
+  <xs:complexType name="ArrayOfNodeIdentifierstring">
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="NodeIdentifierstring" nillable="true"
+                  type="tns:NodeIdentifierstring" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="ArrayOfNodeIdentifierstring" nillable="true" type="tns:ArrayOfNodeIdentifierstring" />
+  <xs:complexType name="FindValueResultOfstringArrayOfFileIdPf8begk3">
+    <xs:annotation>
+      <xs:appinfo>
+        <GenericType Name="FindValueResultOf{0}{1}{#}" Namespace="http://schemas.datacontract.org/2004/07/DHT"
+                     xmlns="http://schemas.microsoft.com/2003/10/Serialization/">
+          <GenericParameter Name="string" Namespace="http://www.w3.org/2001/XMLSchema" />
+          <GenericParameter Name="ArrayOfFileId" Namespace="http://schemas.datacontract.org/2004/07/DHT.MainModule" />
+        </GenericType>
+      </xs:appinfo>
+    </xs:annotation>
+    <xs:complexContent mixed="false">
+      <xs:extension base="tns:FindNodeResultstring">
+        <xs:sequence>
+          <xs:element xmlns:q1="http://schemas.datacontract.org/2004/07/DHT.MainModule" minOccurs="0" name="Value"
+                      nillable="true" type="q1:ArrayOfFileId" />
+        </xs:sequence>
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+  <xs:element name="FindValueResultOfstringArrayOfFileIdPf8begk3" nillable="true"
+              type="tns:FindValueResultOfstringArrayOfFileIdPf8begk3" />
+</xs:schema>

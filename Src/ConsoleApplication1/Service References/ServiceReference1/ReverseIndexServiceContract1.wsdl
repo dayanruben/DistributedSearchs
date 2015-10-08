@@ -1,0 +1,203 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+
+<wsdl:definitions xmlns:wsap="http://schemas.xmlsoap.org/ws/2004/08/addressing/policy"
+                  xmlns:wsa10="http://www.w3.org/2005/08/addressing" xmlns:tns="http://tempuri.org/"
+                  xmlns:msc="http://schemas.microsoft.com/ws/2005/12/wsdl/contract"
+                  xmlns:soapenc="http://schemas.xmlsoap.org/soap/encoding/" xmlns:wsx="http://schemas.xmlsoap.org/ws/2004/09/mex"
+                  xmlns:wsp="http://www.w3.org/ns/ws-policy" xmlns:wsam="http://www.w3.org/2007/05/addressing/metadata"
+                  xmlns:soap12="http://schemas.xmlsoap.org/wsdl/soap12/" xmlns:wsa="http://schemas.xmlsoap.org/ws/2004/08/addressing"
+                  xmlns:wsaw="http://www.w3.org/2006/05/addressing/wsdl" xmlns:soap="http://schemas.xmlsoap.org/wsdl/soap/"
+                  xmlns:wsu="http://docs.oasis-open.org/wss/2004/01/oasis-200401-wss-wssecurity-utility-1.0.xsd"
+                  xmlns:xsd="http://www.w3.org/2001/XMLSchema" name="ReverseIndexServiceContract" targetNamespace="http://tempuri.org/"
+                  xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">
+  <wsdl:types>
+    <xsd:schema targetNamespace="http://tempuri.org/Imports">
+      <xsd:import schemaLocation="http://localhost:23020/?xsd=xsd0" namespace="DHT" />
+      <xsd:import schemaLocation="http://localhost:23020/?xsd=xsd1"
+                  namespace="http://schemas.microsoft.com/2003/10/Serialization/" />
+      <xsd:import schemaLocation="http://localhost:23020/?xsd=xsd2"
+                  namespace="http://schemas.datacontract.org/2004/07/DHT" />
+      <xsd:import schemaLocation="http://localhost:23020/?xsd=xsd3"
+                  namespace="http://schemas.datacontract.org/2004/07/DHT.MainModule" />
+      <xsd:import schemaLocation="http://localhost:23020/?xsd=xsd4" namespace="http://tempuri.org/" />
+    </xsd:schema>
+  </wsdl:types>
+  <wsdl:message name="IReverseIndexServiceContract_Ping_InputMessage">
+    <wsdl:part xmlns:q1="DHT" name="parameters" element="q1:Ping" />
+  </wsdl:message>
+  <wsdl:message name="IReverseIndexServiceContract_Ping_OutputMessage">
+    <wsdl:part xmlns:q2="DHT" name="parameters" element="q2:PingResponse" />
+  </wsdl:message>
+  <wsdl:message name="IReverseIndexServiceContract_Store_InputMessage">
+    <wsdl:part xmlns:q3="DHT" name="parameters" element="q3:Store" />
+  </wsdl:message>
+  <wsdl:message name="IReverseIndexServiceContract_Store_OutputMessage">
+    <wsdl:part xmlns:q4="DHT" name="parameters" element="q4:StoreResponse" />
+  </wsdl:message>
+  <wsdl:message name="IReverseIndexServiceContract_FindNode_InputMessage">
+    <wsdl:part xmlns:q5="DHT" name="parameters" element="q5:FindNode" />
+  </wsdl:message>
+  <wsdl:message name="IReverseIndexServiceContract_FindNode_OutputMessage">
+    <wsdl:part xmlns:q6="DHT" name="parameters" element="q6:FindNodeResponse" />
+  </wsdl:message>
+  <wsdl:message name="IReverseIndexServiceContract_FindValue_InputMessage">
+    <wsdl:part xmlns:q7="DHT" name="parameters" element="q7:FindValue" />
+  </wsdl:message>
+  <wsdl:message name="IReverseIndexServiceContract_FindValue_OutputMessage">
+    <wsdl:part xmlns:q8="DHT" name="parameters" element="q8:FindValueResponse" />
+  </wsdl:message>
+  <wsdl:message name="IReverseIndexServiceContract_Remove_InputMessage">
+    <wsdl:part xmlns:q9="DHT" name="parameters" element="q9:Remove" />
+  </wsdl:message>
+  <wsdl:message name="IReverseIndexServiceContract_Remove_OutputMessage">
+    <wsdl:part xmlns:q10="DHT" name="parameters" element="q10:RemoveResponse" />
+  </wsdl:message>
+  <wsdl:message name="IReverseIndexServiceContract_StoreInto_InputMessage">
+    <wsdl:part name="parameters" element="tns:StoreInto" />
+  </wsdl:message>
+  <wsdl:message name="IReverseIndexServiceContract_StoreInto_OutputMessage">
+    <wsdl:part name="parameters" element="tns:StoreIntoResponse" />
+  </wsdl:message>
+  <wsdl:message name="IReverseIndexServiceContract_RemoveInto_InputMessage">
+    <wsdl:part name="parameters" element="tns:RemoveInto" />
+  </wsdl:message>
+  <wsdl:message name="IReverseIndexServiceContract_RemoveInto_OutputMessage">
+    <wsdl:part name="parameters" element="tns:RemoveIntoResponse" />
+  </wsdl:message>
+  <wsdl:message name="IReverseIndexServiceContract_FindPagedValue_InputMessage">
+    <wsdl:part name="parameters" element="tns:FindPagedValue" />
+  </wsdl:message>
+  <wsdl:message name="IReverseIndexServiceContract_FindPagedValue_OutputMessage">
+    <wsdl:part name="parameters" element="tns:FindPagedValueResponse" />
+  </wsdl:message>
+  <wsdl:portType name="IReverseIndexServiceContract">
+    <wsdl:operation name="Ping">
+      <wsdl:input wsam:Action="DHT/IKadNodeOf_String_IEnumerableOf_FileId/Ping"
+                  message="tns:IReverseIndexServiceContract_Ping_InputMessage" />
+      <wsdl:output wsam:Action="DHT/IKadNodeOf_String_IEnumerableOf_FileId/PingResponse"
+                   message="tns:IReverseIndexServiceContract_Ping_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="Store">
+      <wsdl:input wsam:Action="DHT/IKadNodeOf_String_IEnumerableOf_FileId/Store"
+                  message="tns:IReverseIndexServiceContract_Store_InputMessage" />
+      <wsdl:output wsam:Action="DHT/IKadNodeOf_String_IEnumerableOf_FileId/StoreResponse"
+                   message="tns:IReverseIndexServiceContract_Store_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="FindNode">
+      <wsdl:input wsam:Action="DHT/IKadNodeOf_String_IEnumerableOf_FileId/FindNode"
+                  message="tns:IReverseIndexServiceContract_FindNode_InputMessage" />
+      <wsdl:output wsam:Action="DHT/IKadNodeOf_String_IEnumerableOf_FileId/FindNodeResponse"
+                   message="tns:IReverseIndexServiceContract_FindNode_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="FindValue">
+      <wsdl:input wsam:Action="DHT/IKadNodeOf_String_IEnumerableOf_FileId/FindValue"
+                  message="tns:IReverseIndexServiceContract_FindValue_InputMessage" />
+      <wsdl:output wsam:Action="DHT/IKadNodeOf_String_IEnumerableOf_FileId/FindValueResponse"
+                   message="tns:IReverseIndexServiceContract_FindValue_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="Remove">
+      <wsdl:input wsam:Action="DHT/IKadNodeOf_String_IEnumerableOf_FileId/Remove"
+                  message="tns:IReverseIndexServiceContract_Remove_InputMessage" />
+      <wsdl:output wsam:Action="DHT/IKadNodeOf_String_IEnumerableOf_FileId/RemoveResponse"
+                   message="tns:IReverseIndexServiceContract_Remove_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="StoreInto">
+      <wsdl:input wsam:Action="http://tempuri.org/ISetKadNodeOf_String_FileId/StoreInto"
+                  message="tns:IReverseIndexServiceContract_StoreInto_InputMessage" />
+      <wsdl:output wsam:Action="http://tempuri.org/ISetKadNodeOf_String_FileId/StoreIntoResponse"
+                   message="tns:IReverseIndexServiceContract_StoreInto_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="RemoveInto">
+      <wsdl:input wsam:Action="http://tempuri.org/ISetKadNodeOf_String_FileId/RemoveInto"
+                  message="tns:IReverseIndexServiceContract_RemoveInto_InputMessage" />
+      <wsdl:output wsam:Action="http://tempuri.org/ISetKadNodeOf_String_FileId/RemoveIntoResponse"
+                   message="tns:IReverseIndexServiceContract_RemoveInto_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="FindPagedValue">
+      <wsdl:input wsam:Action="http://tempuri.org/ISetKadNodeOf_String_FileId/FindPagedValue"
+                  message="tns:IReverseIndexServiceContract_FindPagedValue_InputMessage" />
+      <wsdl:output wsam:Action="http://tempuri.org/ISetKadNodeOf_String_FileId/FindPagedValueResponse"
+                   message="tns:IReverseIndexServiceContract_FindPagedValue_OutputMessage" />
+    </wsdl:operation>
+  </wsdl:portType>
+  <wsdl:binding name="basic" type="tns:IReverseIndexServiceContract">
+    <soap:binding transport="http://schemas.xmlsoap.org/soap/http" />
+    <wsdl:operation name="Ping">
+      <soap:operation soapAction="DHT/IKadNodeOf_String_IEnumerableOf_FileId/Ping" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="Store">
+      <soap:operation soapAction="DHT/IKadNodeOf_String_IEnumerableOf_FileId/Store" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="FindNode">
+      <soap:operation soapAction="DHT/IKadNodeOf_String_IEnumerableOf_FileId/FindNode" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="FindValue">
+      <soap:operation soapAction="DHT/IKadNodeOf_String_IEnumerableOf_FileId/FindValue" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="Remove">
+      <soap:operation soapAction="DHT/IKadNodeOf_String_IEnumerableOf_FileId/Remove" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="StoreInto">
+      <soap:operation soapAction="http://tempuri.org/ISetKadNodeOf_String_FileId/StoreInto" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="RemoveInto">
+      <soap:operation soapAction="http://tempuri.org/ISetKadNodeOf_String_FileId/RemoveInto" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="FindPagedValue">
+      <soap:operation soapAction="http://tempuri.org/ISetKadNodeOf_String_FileId/FindPagedValue" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+  </wsdl:binding>
+  <wsdl:service name="ReverseIndexServiceContract">
+    <wsdl:port name="basic" binding="tns:basic">
+      <soap:address location="http://localhost:23020/ReverseIndex" />
+    </wsdl:port>
+  </wsdl:service>
+</wsdl:definitions>
